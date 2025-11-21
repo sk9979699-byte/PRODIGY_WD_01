@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aman Khan | Web Developer Portfolio</title>
+  <style>
+    :root {
+      --nav-height: 70px;
+      --primary: #0077b6;
+      --accent: #00b4d8;
+      --text-dark: #1a1a1a;
+      --text-light: #ffffff;
+      --bg-light: #f9f9f9;
+      --transition: 0.3s ease;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+      color: var(--text-dark);
+      background-color: var(--bg-light);
+      scroll-behavior: smooth;
+      padding-top: var(--nav-height);
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--nav-height);
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      z-index: 1000;
+      transition: background var(--transition), box-shadow var(--transition);
+    }
+
+    header.scrolled {
+      background: var(--primary);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    header.scrolled a {
+      color: var(--text-light);
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 600;
+      position: relative;
+      transition: color var(--transition);
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 3px;
+      background: var(--accent);
+      left: 0;
+      bottom: -6px;
+      transition: width var(--transition);
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    section {
+      padding: 80px 15%;
+      min-height: 100vh;
+    }
+
+    h1, h2 {
+      color: var(--primary);
+    }
+
+    #home {
+      background: linear-gradient(120deg, var(--primary), var(--accent));
+      color: var(--text-light);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    #home h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+
+    #home p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+
+    #home a {
+      display: inline-block;
+      background: #fff;
+      color: var(--primary);
+      padding: 12px 25px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform var(--transition);
+    }
+
+    #home a:hover {
+      transform: scale(1.05);
+    }
+
+    #about, #projects, #contact {
+      background: #fff;
+      border-radius: 10px;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .project-card {
+      background: var(--bg-light);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+      transition: transform var(--transition);
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: var(--primary);
+      color: var(--text-light);
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 0 20px;
+      }
+      section {
+        padding: 70px 8%;
+      }
+      nav ul {
+        gap: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header id="navbar">
+    <a href="#home" class="logo">Aman Khan</a>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home">
+    <h1>Hi, I'm Aman Khan</h1>
+    <p>Creative web developer passionate about crafting responsive, interactive, and user-friendly web experiences.</p>
+    <a href="#projects">View My Work</a>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I'm a dedicated front-end and back-end developer with strong skills in HTML, CSS, JavaScript, and modern frameworks.
+      I enjoy solving complex problems and bringing ideas to life through code. My goal is to build websites that are not
+      only visually appealing but also efficient and accessible.
+    </p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <p>Here are some of my recent projects showcasing my design and coding abilities.</p>
+
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>Portfolio Website</h3>
+        <p>A personal portfolio built using HTML, CSS, and JavaScript to highlight my work and skills.</p>
+      </div>
+      <div class="project-card">
+        <h3>Online Store</h3>
+        <p>An e-commerce website with product listing, cart system, and responsive checkout process.</p>
+      </div>
+      <div class="project-card">
+        <h3>Chat Application</h3>
+        <p>A real-time chat app built using Node.js and Socket.io for instant messaging between users.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>If you'd like to work together or just say hello, feel free to reach out!</p>
+    <p>Email: <strong>amankhan.dev@example.com</strong></p>
+    <p>LinkedIn: <a href="#" target="_blank">linkedin.com/in/amankhan</a></p>
+  </section>
+
+  <footer>
+    <p>© 2025 Aman Khan | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById("navbar");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    });
+  </script>
+</body>
+</html>
